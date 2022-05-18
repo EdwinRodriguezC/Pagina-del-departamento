@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+
+/*Notas de cosas a cambiar:
+  1.- Eliminar textos de slider.
+  2.- Añadir imagen de cabecera a cada una de las paginas.
+  3.- Añadir imagen de fondo con la información en la pagina principal(index.html).
+  4.- Hacer que el slider sea automatico(slider.js).
+*/
+
+/*Slider css responsive*/
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  width: 90%;
+  min-height: 90vn;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  background-color: #DCDCDC;
+  padding: 50px 0;
+}
+
+.slider__container {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  gap: 1em;
+}
+
+.slider__body {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  opacity: 0;
+  pointer-events: none;
+  display: grid;
+  background-color: #DCDCDC;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  transition: opacity 1.5s;
+}
+
+.slider__body--show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.slider__text {
+  max-width: 600px;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.slider__review {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.slider__img {
+  width: 380px;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.slider__arrow{
+  cursor: pointer;
+  width: 50%;
+}
+
+.slider__arrow:nth-of-type(2){
+  justify-self: end;
+}
+
+@media (max-width: 747px){
+  .slider__body{
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1em;
+  }
+
+  .slider__picture{
+    grid-row: 1/2;
+  }
+
+  .slider__img{
+    width: 250px;
+    height: 210px;
+  }
+}
+
+
+@media (max-width: 480px){
+  .slider__container{
+    grid-template-columns: 25px 1fr 25px;
+  }
+
+  .slider__arrow{
+    width: 100%;
+  }
+
+  .slider__img{
+    width: 180px;
+    height: 180px;
+  }
+
+  .subtitle{
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .slider__review{
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/*Información pagina principal*/
+.info__container{
+  font-family: "Raleway", sans-serif;
+  font-size: xx-large;
+  text-align: justify;
+}
+
+@media (max-width: 747px){
+  .info__container{
+    font-family: "Raleway", sans-serif;
+    font-size: large;
+    text-align: justify;
+  }
+}
+
+@media(max-width: 470px){
+  .info__container{
+    font-family: "Raleway", sans-serif;
+    font-size: medium;
+    text-align: justify;
+  }
+}
+
+.link__container{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: grid;
+  background-color: #DCDCDC;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+
+/*menu responsive*/
+#menu {
+  background-color: black
+  
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px 30px;
+}
+
+#menu li {
+  display: inline;
+  margin: 0;
+}
+
+#menu li a {
+  color: white;
+  padding: 20px 30px;
+  text-decoration: none;
+}
+
+#menu li a:hover {
+  background-color: #DCDCDC;
+  color: white;
+}
+
+@media screen and (max-width: 747px) {
+  #menu ul {
+    padding: 0;
+  }
+  #menu ul li {
+    margin-right: -3px;
+    display: inline-block;
+    text-align: center;
+    width: 33%;
+  }
+
+  #menu li a {
+    display: list-item;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #menu ul li {
+    width: 100%;
+  }
+} 
+
